@@ -21,7 +21,7 @@ In your lambdas package.json create a test script with a command like:
 
 Running npm test will now assume the role of the lambda and run it locally!
 
-## AWS Evironment
+## AWS Environment
 
 Lambda functions can build and run differenctly in the AWS Lambda Environment then on your local machine. To ensure proper testing we can use a sandboxed local environment that mimics AWS Lambda: https://github.com/lambci/docker-lambda
 
