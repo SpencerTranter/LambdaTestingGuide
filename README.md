@@ -8,6 +8,8 @@ When an AWS lambda interacts with another part of AWS (ie S3) it requires a spec
 
 As a local user attempting to test the Lambda you need to be able to assume the role of the function in order for it to run.
 
+Docs: https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html
+
 1. Create a policy for your user that gives access to assume said role
 2. Create a profile in your local machine under `~/.aws/config` for the role you are going to assume
 3. Edit the trust relationship of the role to allow the user to assume it
