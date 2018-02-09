@@ -24,7 +24,7 @@ Running npm test will now assume the role of the lambda and run it locally!
 Lambda functions can build and run differenctly in the AWS Lambda Environment then on your local machine. To ensure proper testing we can use a sandboxed local environment that mimics AWS Lambda: `https://github.com/lambci/docker-lambda`
 
 To run your lamnda function inside of this container you can use the command: 
-`--rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “`cat sample.json`”`
+`--rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “``cat sample.json``”`
 
 To compile native dependencies in node_modules insdie this environment you can use the command:
 `docker run --rm -v "$PWD":/var/task lambci/lambda:build-nodejs6.10`
@@ -33,4 +33,4 @@ To compile native dependencies in node_modules insdie this environment you can u
 
 To both assume a role and test it inside the AWS Lambda Environment you will need to grab the AWS environment variables from the assumed role and pass them into the docker container.
 
-`docker run --env-file <(assume-role ROLE_NAME | sed ‘/^#/d’ | sed ‘s/^export //g’ | sed ‘s/“//g’) --rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “`cat sample.json`”`
+`docker run --env-file <(assume-role ROLE_NAME | sed ‘/^#/d’ | sed ‘s/^export //g’ | sed ‘s/“//g’) --rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “``cat sample.json``”`
