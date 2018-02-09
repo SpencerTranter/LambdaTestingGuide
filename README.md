@@ -14,7 +14,7 @@ Docs: https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html
 2. Create a profile in your local machine under `~/.aws/config` for the role you are going to assume
 3. Edit the trust relationship of the role to allow the user to assume it
 
-Once these steps are complete you can now assume the role, to do this there is a helpful CLI tool: `https://github.com/remind101/assume-role`
+Once these steps are complete you can now assume the role, to do this there is a helpful CLI tool: https://github.com/remind101/assume-role
 
 In your lambdas package.json create a test script with a command like: 
 `eval $(assume-role ROLE_NAME) && node test.js`
@@ -23,7 +23,7 @@ Running npm test will now assume the role of the lambda and run it locally!
 
 ## AWS Evironment
 
-Lambda functions can build and run differenctly in the AWS Lambda Environment then on your local machine. To ensure proper testing we can use a sandboxed local environment that mimics AWS Lambda: `https://github.com/lambci/docker-lambda`
+Lambda functions can build and run differenctly in the AWS Lambda Environment then on your local machine. To ensure proper testing we can use a sandboxed local environment that mimics AWS Lambda: https://github.com/lambci/docker-lambda
 
 To run your lamnda function inside of this container you can use the command: 
 ``--rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “`cat sample.json`”``
