@@ -4,7 +4,7 @@
 
 ## Assumed Roles
 
-When an AWS lambda interacts with another part of AWS (ie S3) it requires a specific role to be made so that it has access for to complete its task. These roles should be as limiting as possible, only allowing exactly what the lambda need for it to run.
+When an AWS lambda interacts with another part of AWS (ie S3) it requires a specific role to be made so that it has access for to complete its task. These roles should be as limiting as possible, only allowing exactly what the lambda needs for it to run.
 
 As a local user attempting to test the Lambda you need to be able to assume the role of the function in order for it to run.
 
