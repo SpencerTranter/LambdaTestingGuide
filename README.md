@@ -26,7 +26,7 @@ Running npm test will now assume the role of the lambda and run it locally!
 Lambda functions can build and run differenctly in the AWS Lambda Environment then on your local machine. To ensure proper testing we can use a sandboxed local environment that mimics AWS Lambda: https://github.com/lambci/docker-lambda
 
 To run your lamnda function inside of this container you can use the command: 
-``--rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “`cat sample.json`”``
+``docker run --rm -v “$PWD”:/var/task lambci/lambda:nodejs6.10 index.handler “`cat sample.json`”``
 
 To compile native dependencies in node_modules insdie this environment you can use the command:
 `docker run --rm -v "$PWD":/var/task lambci/lambda:build-nodejs6.10`
